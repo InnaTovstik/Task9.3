@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Map<String, Integer> map = mapCreate();
         System.out.println(map);
-        TreeSet t = searchMaxStrings(map);
+        TreeSet<Integer> t = searchMaxStrings(map);
         for (Entry<String, Integer> entry : map.entrySet()) {
             String key = entry.getKey();
             Integer value = entry.getValue();
@@ -21,9 +21,9 @@ public class Main {
         }
     }
 
-    private static TreeSet searchMaxStrings(Map<String, Integer> map) {
+    private static TreeSet<Integer> searchMaxStrings(Map<String, Integer> map) {
         Collection<Integer> values = map.values();
-        TreeSet sortedSet = new TreeSet(values);
+        TreeSet<Integer> sortedSet = new TreeSet<>(values);
         sortedSet.addAll(values);
         return sortedSet;
     }
